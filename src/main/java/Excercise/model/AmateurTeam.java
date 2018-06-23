@@ -4,6 +4,11 @@ public class AmateurTeam extends Team {
     String mascotte;
     String honkkroeg;
 
+    public AmateurTeam(String name, String mascotte) {
+        this.name = name;
+        this.mascotte = mascotte;
+    }
+
     public String getMascotte() {
         return mascotte;
     }
@@ -18,5 +23,13 @@ public class AmateurTeam extends Team {
 
     public void setHonkkroeg(String honkkroeg) {
         this.honkkroeg = honkkroeg;
+    }
+
+    @Override
+    public String toString() {
+        return "AmateurTeam{" +
+                "mascotte='" + mascotte + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
