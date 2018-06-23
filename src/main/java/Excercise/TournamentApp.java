@@ -38,32 +38,57 @@ public class TournamentApp {
 
         Tournament round1 = new Tournament();
 
-        List resultRound1 = new ArrayList();
+        List<Team> resultRound1 = new ArrayList<>();
 
         for(int i = 0; i < 8; i+=2) {
             // resultRound1.add(round1.match(teams.get(i), teams.get(i + 1))); // list in list? strange
-            round1.match(teams.get(i), teams.get(i + 1));
+            resultRound1 = round1.match(teams.get(i), teams.get(i + 1));
         }
-
+        System.out.println("The following teams are going to the second round:");
+        for (Team i : resultRound1) {
+            System.out.println(i.getName());
+        }
+        System.out.println("---------------------------");
 
 
         Tournament round2 = new Tournament();
 
-        List resultRound2 = new ArrayList();
+        List<Team> resultRound2 = new ArrayList<>();
 
         for(int i = 0; i < 4; i+=2) {
-            resultRound2.add(round2.match(teams.get(i), teams.get(i + 1)));
+            resultRound2 = (round2.match(teams.get(i), teams.get(i + 1)));
         }
-        System.out.println(resultRound2);
+        System.out.println("The following teams are going to the final:");
+        for (Team i : resultRound2) {
+            System.out.println(i.getName());
+        }
+        System.out.println("---------------------------");
 
         Tournament round3 = new Tournament();
 
-        List resultRound3 = new ArrayList();
+        List<Team> resultRound3 = new ArrayList<>();
 
         for(int i = 0; i < 2; i+=2) {
-            resultRound3.add(round3.match(teams.get(i), teams.get(i + 1)));
+            resultRound3 = (round3.match(teams.get(i), teams.get(i + 1)));
         }
-        System.out.println(resultRound3);
+
+        String winner = "";
+        String mascotteOrSponsor = "";
+
+        for (Team i : resultRound3) {
+            winner = i.getName();
+
+            if (i instanceof AmateurTeam) {
+                 mascotteOrSponsor = "it's mascotte: " + ((AmateurTeam) i).getMascotte();
+            } else if (i instanceof ProfTeam) {
+                mascotteOrSponsor = "it's sponsor: "+ ((ProfTeam) i).getSponsor();
+            }
+        }
+        System.out.println(winner + " has won the tournament!");
+
+        System.out.println("---------------------------");
+
+        System.out.println(winner + " is celebrating with " + mascotteOrSponsor);
 
 
 
