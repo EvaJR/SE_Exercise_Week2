@@ -6,11 +6,11 @@ public class TeamTest {
 
     @Test
 
-    public void setterAndGetterTeamScore() {
+    public void setterAndGettersTeam() {
         ProfTeam tester = new ProfTeam("test", "test"); // team itself is abstract and cannot be instantiated
-        tester.setScore(1);
-        assert(tester.getScore() == 1);
-        
+        tester.setScore(-1);
+        assert(tester.getScore() == -1);
+        assert(tester.getName() == "test");
     }
 
 

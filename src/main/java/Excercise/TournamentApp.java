@@ -57,7 +57,7 @@ public class TournamentApp {
         String mascotteOrSponsor = "";
 
         for (Team i : winnersRound3) {
-            winner = i.getName();
+            winner = i.getName(); // shorter way to do this with list with one object?
 
             if (i instanceof AmateurTeam) {
                  mascotteOrSponsor = "it's mascot: " + ((AmateurTeam) i).getMascotte();

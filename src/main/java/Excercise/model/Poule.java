@@ -6,8 +6,6 @@ import java.util.List;
 
 public class Poule {
 
-
-
     public void poule(List teams) {
 
         Team feyenoord = new ProfTeam("Feyenoord", "Nike");
