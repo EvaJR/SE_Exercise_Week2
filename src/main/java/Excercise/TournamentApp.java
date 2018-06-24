@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * This app shows the results of a football tournament in the console.
  * Four amateur teams and four prof teams participate.
- * It ends with a party!
+ * It ends with a celebration!
  */
 public class TournamentApp {
     public static void main(String[] args) {
@@ -16,13 +16,13 @@ public class TournamentApp {
 
         List<Team> teams = new ArrayList<>();
 
-        poule.poule(teams);
+        poule.poule(teams); // list of 8 teams created, in shuffled order
 
         Tournament round1 = new Tournament();
 
         List<Team> winnersRound1 = new ArrayList<>();
 
-        for(int i = 0; i < teams.size(); i+=2) {
+        for(int i = 0; i < teams.size(); i+=2) { // each consecutive pair of teams plays a match against eachother
 
             winnersRound1 = round1.match(teams.get(i), teams.get(i + 1));
         }
