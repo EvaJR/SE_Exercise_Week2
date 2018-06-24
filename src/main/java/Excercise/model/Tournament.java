@@ -9,9 +9,9 @@ public class Tournament {
         return (int) Math.floor(Math.random() * 6);
 
     }
+
     List<Team> winners = new ArrayList<>();
     public List match(Team team1, Team team2) {
-
 
         team1.setScore(generateScore());
         team2.setScore(generateScore());
@@ -38,12 +38,7 @@ public class Tournament {
         }
         System.out.println("---------------------------------------------");
 
-
-
-
         return winners;
-
-
 
     }
 
